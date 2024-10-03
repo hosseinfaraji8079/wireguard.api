@@ -27,7 +27,6 @@ services:
     volumes:
       - /path/to/wireguard/config:/config
       - /lib/modules:/lib/modules
-      - shared_volume:/usr/lib/wg
     ports:
       - 51820:51820/udp
     sysctls:
