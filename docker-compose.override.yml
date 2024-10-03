@@ -25,7 +25,7 @@ services:
       - PERSISTENTKEEPALIVE_PEERS=25
       - LOG_CONFS=true
     volumes:
-      - /path/to/wireguard/config:/config
+      - /root/wireguard.api:/config
       - /lib/modules:/lib/modules
     ports:
       - 51820:51820/udp
