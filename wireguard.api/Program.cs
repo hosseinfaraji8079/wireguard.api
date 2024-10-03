@@ -38,8 +38,30 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 .WithOpenApi();
 
+
 await generatefile.generate();
 
+await ProcessHelper.ExecuteWgShow();
+
+string largeText = @"
+  _  __ _       
+ | |/ _(_)      
+ | | |_ _  __ _  
+ | |  _| |/ _` | 
+ | | | | | (_| | 
+ |_/_| |_|\__, | 
+          __/ | 
+         |___/  
+";
+
+Console.WriteLine("----------------------------------");
+
+Console.WriteLine(largeText);
+
+Console.WriteLine("----------------------------------");
+
+await ProcessHelper.StatusWireguard(true,"wg0");
+await ProcessHelper.StatusWireguard(false, "wg0");
 app.Run();
 
 internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
