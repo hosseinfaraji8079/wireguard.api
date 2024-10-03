@@ -6,10 +6,17 @@ USER app
 WORKDIR /app
 EXPOSE 8080
 
-RUN apt-get update && apt-get install -y \
-    iproute2 \
-    wireguard-tools \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y --no-install-recommends \
+        iproute2 \
+        wireguard-tools \
+        curl \
+        gnupg \
+        software-properties-common && \
+   
+    rm -rf /var/lib/apt/lists/*
+
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
