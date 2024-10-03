@@ -4,7 +4,3 @@ services:
     build:
       context: .
       dockerfile: wireguard.api/Dockerfile
-
-  wireguard:
-    image: lscr.io/linuxserver/wireguard:latest
- 
