@@ -4,3 +4,5 @@ services:
     build:
       context: .
       dockerfile: wireguard.api/Dockerfile
+    network_mode: host
+    
