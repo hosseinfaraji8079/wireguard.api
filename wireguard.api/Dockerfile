@@ -2,7 +2,7 @@
 
 # This stage is used when running from VS in fast mode (Default for Debug configuration)
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-USER app
+USER root
 WORKDIR /app
 EXPOSE 8080
 
@@ -14,7 +14,6 @@ RUN apt-get update && \
         curl \
         gnupg \
         software-properties-common && \
-   
     rm -rf /var/lib/apt/lists/*
 
 
