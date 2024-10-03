@@ -26,6 +26,7 @@ services:
       - LOG_CONFS=true
     volumes:
       - /root/wireguard.api:/config
+      - /root/wireguard/lib:/usr/lib
       - /lib/modules:/lib/modules
     ports:
       - 51820:51820/udp
